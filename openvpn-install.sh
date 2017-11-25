@@ -267,6 +267,8 @@ cert server.crt
 key server.key
 dh dh.pem
 auth SHA512
+tls-version-min 1.2
+tls-cipher TLS-ECDHE-RSA-WITH-AES-128-GCM-SHA256:TLS-ECDHE-ECDSA-WITH-AES-128-GCM-SHA256:TLS-ECDHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-256-CBC-SHA256
 tls-auth ta.key 0
 topology subnet
 server 10.8.0.0 255.255.255.0
@@ -402,6 +404,10 @@ rcvbuf 0
 remote $IP $PORT
 resolv-retry infinite
 nobind
+user nobody
+group nobody
+tls-version-min 1.2
+tls-cipher TLS-ECDHE-RSA-WITH-AES-128-GCM-SHA256:TLS-ECDHE-ECDSA-WITH-AES-128-GCM-SHA256:TLS-ECDHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-256-CBC-SHA256
 persist-key
 persist-tun
 remote-cert-tls server
@@ -410,6 +416,7 @@ cipher AES-256-CBC
 comp-lzo
 setenv opt block-outside-dns
 key-direction 1
+auth-nocache
 verb 3" > /etc/openvpn/client-common.txt
 	# Generates the custom client.ovpn
 	newclient "$CLIENT"
