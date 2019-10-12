@@ -328,7 +328,6 @@ key server.key
 dh dh.pem
 auth SHA512
 tls-version-min 1.2
-tls-cipher TLS-ECDHE-RSA-WITH-AES-128-GCM-SHA256:TLS-ECDHE-ECDSA-WITH-AES-128-GCM-SHA256:TLS-ECDHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-256-CBC-SHA256
 tls-crypt tc.key
 topology subnet
 server 10.8.0.0 255.255.255.0
@@ -439,7 +438,6 @@ nobind
 user nobody
 group nobody
 tls-version-min 1.2
-tls-cipher TLS-ECDHE-RSA-WITH-AES-128-GCM-SHA256:TLS-ECDHE-ECDSA-WITH-AES-128-GCM-SHA256:TLS-ECDHE-RSA-WITH-AES-256-GCM-SHA384:TLS-DHE-RSA-WITH-AES-256-CBC-SHA256
 persist-key
 persist-tun
 remote-cert-tls server
